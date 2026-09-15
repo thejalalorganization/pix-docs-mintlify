@@ -1,5 +1,5 @@
 ---
-title: "Pix for Linux: Download and Install on Any Distro"
+title: "Pix for Linux: Install on Debian, RPM, and Arch Distros"
 sidebarTitle: "Linux"
 description: "Install Pix on Ubuntu, Debian, Fedora, RHEL, Arch, or CachyOS — available as .deb, .rpm, and .pkg.tar.zst packages for x64 and ARM64."
 ---
@@ -24,27 +24,31 @@ sudo dpkg -i pix.deb
 
 ### Ubuntu / Debian — ARM64
 
-Download the ARM64 `.deb` package for machines running 64-bit ARM (e.g. Raspberry Pi 4/5 running a 64-bit OS, Ampere-based cloud VMs):
+Download the ARM64 `.deb` package for machines running 64-bit ARM (e.g. Raspberry Pi 4/5 running a 64-bit OS, Ampere-based cloud VMs). [Download the ARM64 .deb](#all-packages-at-a-glance), then install:
 
 ```bash
-# Download (replace the URL with the ARM64 .deb link from pix.dev/downloads)
 sudo dpkg -i pix-arm64.deb
 ```
 
 ### Fedora / RHEL — x64
 
+[Download the x64 .rpm](#all-packages-at-a-glance), then install:
+
 ```bash
-# Install directly from the package file
 sudo rpm -i pix.x86_64.rpm
 ```
 
 ### Fedora / RHEL — ARM64
+
+[Download the ARM64 .rpm](#all-packages-at-a-glance), then install:
 
 ```bash
 sudo rpm -i pix.aarch64.rpm
 ```
 
 ### Arch Linux / CachyOS — x64
+
+[Download the .pkg.tar.zst](#all-packages-at-a-glance), then install:
 
 ```bash
 sudo pacman -U pix.pkg.tar.zst
@@ -54,19 +58,21 @@ sudo pacman -U pix.pkg.tar.zst
 
 ## All Packages at a Glance
 
+The x64 Debian/Ubuntu package has a direct download link below. For all other packages, check the [Pix releases page](https://pix.dev/releases) or reach out via the in-app feedback button to get the appropriate download for your architecture and distribution.
+
 | Distribution | Architecture | Format |
 |---|---|---|
 | Ubuntu / Debian | x64 | [`.deb` ↓](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/deb/x64) |
-| Ubuntu / Debian | ARM64 | `.deb` |
-| Fedora / RHEL | x64 | `.rpm` |
-| Fedora / RHEL | ARM64 | `.rpm` |
-| Arch / CachyOS | x64 | `.pkg.tar.zst` |
+| Ubuntu / Debian | ARM64 | `.deb` — see releases page |
+| Fedora / RHEL | x64 | `.rpm` — see releases page |
+| Fedora / RHEL | ARM64 | `.rpm` — see releases page |
+| Arch / CachyOS | x64 | `.pkg.tar.zst` — see releases page |
 
 ---
 
 ## After Installation
 
-Once installed, launch Pix from your application launcher or run `pix` from the terminal. On first launch, Pix starts the server and opens the client. You can then:
+Once installed, launch Pix from your application launcher. On first launch, Pix starts the server and opens the client. You can then:
 
 - **Add a host** — connect to a remote Pix server by entering its LAN IP or Tailscale address in **Settings → Hosts**.
 - **Configure Tailscale** — install [Tailscale](https://tailscale.com/download/linux) on this machine to reach it (or reach other hosts) securely from outside your local network.
