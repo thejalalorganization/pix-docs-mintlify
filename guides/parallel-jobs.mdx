@@ -1,0 +1,104 @@
+---
+title: "Run Parallel Jobs and Sessions in Pix"
+sidebarTitle: "Parallel Jobs"
+description: "Keep independent work moving simultaneously by running multiple agent sessions and background jobs side by side in Pix."
+---
+
+Parallel jobs let you run multiple agent sessions at the same time so independent work never has to wait in line. While one agent is refactoring a module, another can be writing tests, generating documentation, or exploring a completely different approach — all from the same workspace, all visible at a glance.
+
+## Start a Parallel Session
+
+You can open a new session at any point without interrupting work that's already in progress.
+
+<Steps>
+  <Step title="Open a new session">
+    Select **New Session** from the sidebar or press **⌘N**. Pix creates the session alongside any running jobs — existing agents keep working uninterrupted.
+  </Step>
+  <Step title="Choose your agent and configure the session">
+    Pick the agent (Claude Code, Codex, Cursor, or Pi), set the model, reasoning level, context window, and speed preferences, then describe your task.
+  </Step>
+  <Step title="Start the session">
+    Send your first message. The new session becomes active while previous jobs continue running in the background.
+  </Step>
+</Steps>
+
+## What Pix Shows for Live Jobs
+
+Every running job surfaces real-time information so you always know what's happening:
+
+<CardGroup cols={2}>
+  <Card title="Progress" icon="spinner">
+    A live indicator shows the agent's current activity — which file it's editing, which tool it just called, or which step of its plan it's executing.
+  </Card>
+  <Card title="Elapsed Time" icon="clock">
+    A running timer shows how long the current turn has been active so you can spot a job that's taking longer than expected.
+  </Card>
+  <Card title="Usage" icon="chart-bar">
+    Token and compute usage updates as the turn progresses, giving you visibility into cost before a job completes.
+  </Card>
+  <Card title="Stop Control" icon="stop">
+    A **Stop** button is always present for running jobs. Pix uses the strongest stop action the active agent supports — from graceful cancellation to an immediate interrupt.
+  </Card>
+</CardGroup>
+
+## Steer a Running Turn
+
+You don't have to wait for a turn to finish before directing the agent. Pix gives you two ways to interact with an active job:
+
+**Send a message mid-turn.** Type in the composer and send while the agent is working. Pix delivers the message to the agent without interrupting the current flow — the agent can incorporate your guidance immediately or queue it for after the current step.
+
+**Queue the next action.** If you want to wait until the current turn is complete, compose your follow-up message and use **Queue**. Pix holds the message and sends it automatically the moment the agent finishes, so there's no gap between turns.
+
+## Answer Structured Agent Questions
+
+Some agents pause mid-turn to ask a clarifying question before proceeding. Pix presents these as structured prompts directly in the session — you see the question and any suggested choices inline.
+
+Select or type your answer and confirm. The agent receives your response and continues without you having to restart or reframe the task. The rest of the in-progress turn picks up exactly where it left off.
+
+## Follow a Structured Plan
+
+When an agent produces a plan or a list of todos before executing, Pix renders it as a live checklist in the session sidebar. As the agent works through each item, the list updates in real time — completed steps check off, the active step highlights, and any blocked or skipped items are flagged.
+
+Use the plan view to:
+- Understand what the agent is doing at a glance without reading the full transcript
+- Spot when the agent has deviated from the original plan
+- Know how much work remains before a turn completes
+
+## Recovery Actions
+
+If a session stalls, errors, or loses connection, Pix offers the right recovery action for each situation:
+
+<Accordion title="Reconnect">
+  Use **Reconnect** when the session lost its network connection but the agent process is still running. Pix re-establishes the stream and resumes displaying live output — no work is lost.
+</Accordion>
+
+<Accordion title="Retry">
+  Use **Retry** when a turn ended with an error or an unexpected result. Pix re-sends the last message to the agent so it can try again from the same starting point.
+</Accordion>
+
+<Accordion title="Resume">
+  Use **Resume** when a turn was paused or interrupted before completing. Pix asks the agent to continue from where it stopped, preserving the work already done.
+</Accordion>
+
+<Accordion title="Cancel">
+  Use **Cancel** to discard a queued action that hasn't started yet. The running turn continues; only the pending follow-up is removed.
+</Accordion>
+
+<Accordion title="Stop">
+  Use **Stop** to halt the active turn immediately. Pix applies the strongest stop mechanism the agent supports — a graceful shutdown where possible, a hard interrupt if necessary.
+</Accordion>
+
+## Configure Model, Reasoning, and Speed
+
+Each session can be configured independently. Open session settings to adjust:
+
+- **Model** — choose the specific model version the agent uses for this session
+- **Reasoning** — set the reasoning effort or thinking budget (where the agent supports it)
+- **Context** — control how much of the conversation and project history is sent with each turn
+- **Speed** — trade response latency for thoroughness, or optimize for fast iteration
+
+You can change these settings between turns without starting a new session.
+
+<Tip>
+  Use parallel sessions when the work is genuinely independent — two separate features, a refactor alongside a new module, or exploration in a throwaway session while production work continues. If you want to branch from an existing conversation without losing it, use **Fork** instead: it creates a new session rooted at a specific turn so both threads share the same history up to that point.
+</Tip>

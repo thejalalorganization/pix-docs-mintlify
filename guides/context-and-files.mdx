@@ -1,0 +1,91 @@
+---
+title: "Add Context and Files to Pix Sessions"
+sidebarTitle: "Context & Files"
+description: "Attach files, reference code, stream simulators, and browse your repo to give agents everything they need to do precise, informed work."
+---
+
+Pix lets you bring rich, layered context to every agent session — not just text. Attach images and videos to describe a UI bug, reference an exact file so the agent reads the right version, stream a live simulator so it can watch your app respond to its own changes, or browse the full diff of a completed turn before accepting the work. Every piece of context you add reduces the gap between what you mean and what the agent produces.
+
+## Attach Files
+
+Add images, video, and documents directly to any message using the composer.
+
+**To attach a file:** Select the paperclip icon in the composer, or drag and drop a file into the message area. Pix accepts images (PNG, JPG, GIF, WebP), video (MP4, MOV), PDFs, and common document formats.
+
+Attachments are scoped to the message they're sent with. The agent receives the file alongside your text and can reason about its contents — describing a screenshot, reading a PDF spec, or analyzing a video recording of a bug.
+
+<Tip>
+  Attach a screen recording of unexpected behavior instead of describing it. Agents that support vision can watch the video and identify the problem more accurately than a written description alone.
+</Tip>
+
+## Reference Files and Folders with @
+
+Type **@** in the composer to reference a specific project file or folder. A picker opens showing your project's file tree — navigate or search to select the exact path you mean.
+
+The agent receives the file's current content inline with your message. This works across all Pix clients — native app, web, and mobile — so your references are consistent wherever you're working.
+
+Use `@` references to:
+- Point the agent at the exact file you want it to read or edit (`@src/api/auth.ts`)
+- Include a folder to give the agent an overview of a module (`@src/components/`)
+- Anchor a question to a specific piece of code without pasting it manually
+
+## Live Terminal
+
+Pix keeps a terminal panel close to the conversation so you can see commands and runtime output alongside the session. When the agent runs a command, the terminal shows the full output in real time. When something fails, you see the error immediately — without switching windows or hunting through logs.
+
+You can also type commands directly in the terminal panel. Use it to:
+- Run tests and watch results as the agent writes code
+- Check the state of the process the agent just started
+- Verify environment variables or dependencies before the agent proceeds
+
+The terminal and the conversation are synchronized — if the agent references a command, you can trace it to the exact terminal output it produced.
+
+## Repository Review
+
+Move from the conversation to the full project structure at any point using the repository panel. From there you can:
+
+- **Browse the file tree** — navigate the entire project without leaving Pix
+- **View branches** — see all local and remote branches, switch between them, or check out a worktree
+- **Inspect changes** — see every uncommitted modification the agent has made across the project in a single view
+
+**Worktree awareness.** Pix shows which checkout is currently active and lets you switch between the root worktree and any additional worktrees. If the agent is working in a worktree, the file tree, diff view, and `@` file references all reflect that worktree's state.
+
+## View Diffs Losslessly
+
+Every change the agent makes is captured in full detail. The diff view shows:
+
+- **File paths** — exact paths for every modified, added, or deleted file
+- **Hunks** — each changed region with surrounding context
+- **Additions and deletions** — line-by-line, color-coded
+- **Raw patch** — the complete diff as it would appear in `git diff`
+
+When a turn touches many files, the diff can be dense. Use **Summarize Changes** to get a plain-language description of what changed in each file while keeping the full patch intact below it. You see the decision-level summary at a glance and can expand to the raw diff whenever you need the details.
+
+## Simulator Streaming
+
+On Mac, Pix can stream a live iOS or macOS simulator directly into the session. As the agent edits code and rebuilds, you watch the app respond in real time — no alt-tabbing to the simulator, no waiting for a manual rebuild to check results.
+
+To enable simulator streaming, start a simulator from Xcode or the command line and select **Stream Simulator** in the Pix session toolbar. The simulator feed appears in a panel beside the conversation and stays live for the duration of the session.
+
+## Browser Integration
+
+When browser control is available, Pix opens a browser panel inside the session so you can navigate, interact with, and inspect a running web experience alongside the conversation.
+
+Use the browser panel to:
+- **Navigate** to a URL the agent just generated or deployed
+- **Inspect** the DOM and styles without opening a separate DevTools window
+- **Describe** what you see to the agent by referencing the live page
+
+The agent can also control the browser directly — clicking, filling forms, and navigating — when the active agent supports browser automation.
+
+## Preview Outputs In-Place
+
+Pix renders common output types directly in the session so you can review results without opening external applications:
+
+- **Images and video** — previewed inline in the conversation
+- **PDFs** — rendered in a scrollable panel beside the session
+- **Markdown** — rendered with formatting so you can read it as a document, not raw text
+- **HTML and web artifacts** — rendered in an iframe so you see the actual output
+- **Code artifacts** — displayed with syntax highlighting and a copy action
+
+When an agent produces a visualization — a chart, a diagram, a UI mockup — it appears directly in the conversation thread as a live, interactive artifact.

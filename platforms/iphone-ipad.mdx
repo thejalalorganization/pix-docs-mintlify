@@ -1,0 +1,89 @@
+---
+title: "Pix for iPhone and iPad: Mobile Coding Agent Access"
+sidebarTitle: "iPhone & iPad"
+description: "Install Pix on iPhone for a focused mobile client or on iPad for a desktop-class layout — both connect to any saved Pix host over LAN or Tailscale."
+---
+
+The Pix iOS and iPadOS apps bring your coding agent sessions to your pocket and your desk. Both connect to a Pix server running on a Mac (or Linux machine) and give you full access to your sessions, chat, and workspace tools — no workspace data is stored on the device itself. iPhone offers a focused, single-column mobile experience; iPad expands into a desktop-class layout with sessions, chat, and workspace tools visible side by side.
+
+<Note>
+  Pix for iPhone and iPad is currently distributed through **Apple TestFlight**, which means it is an active beta. You may encounter rough edges, and Apple will occasionally prompt you to update to the latest build. Your feedback during this phase directly shapes the app.
+</Note>
+
+---
+
+## Install via TestFlight
+
+<Steps>
+  <Step title="Accept the TestFlight Invite">
+    Open the TestFlight invite link on your iPhone or iPad:
+    [**Join the Pix Beta on TestFlight**](https://testflight.apple.com/join/u29zT3mc)
+
+    If you don't have TestFlight installed, the App Store will prompt you to install it first (it's free).
+  </Step>
+  <Step title="Install Pix">
+    After accepting the invite in TestFlight, tap **Install** next to Pix. The app downloads and appears on your Home Screen like any other app.
+  </Step>
+  <Step title="Open Pix and Add a Host">
+    Launch Pix and follow the prompt to add your first Pix host. See [Connecting to a Host](#connecting-to-a-host) below.
+  </Step>
+</Steps>
+
+---
+
+## iPhone: Focused Mobile Experience
+
+On iPhone, Pix presents a clean, single-column interface optimized for one-handed and on-the-go use:
+
+- **Sessions list** — browse and resume all active and past sessions.
+- **Chat** — send messages, review agent responses, and track progress.
+- **Core controls** — start new sessions, stop agents, and reference files or other sessions in the composer.
+
+The iPhone layout prioritizes the task you're actively working on without overwhelming the smaller screen.
+
+---
+
+## iPad: Desktop-Class Layout
+
+On iPad, Pix uses the larger display to show multiple panels at once — the same information density you get on Mac:
+
+- **Sessions panel** on the left for quick navigation.
+- **Chat and composer** in the center for your active conversation.
+- **Workspace tools** on the right: file browser, MCP tools, project context.
+
+iPad also supports Stage Manager and external keyboard shortcuts, so you can use Pix alongside other apps as part of a full development workflow.
+
+---
+
+## Connecting to a Host
+
+Both iPhone and iPad connect to a **Pix host** — a Mac or Linux machine running the Pix server. To add a host:
+
+<Steps>
+  <Step title="Open Host Settings">
+    In Pix, tap **Settings → Hosts → Add Host**.
+  </Step>
+  <Step title="Enter the Host Address">
+    - **On the same network (LAN):** enter the host's local IP address (e.g. `192.168.1.42`).
+    - **Away from home or office (Tailscale):** enter the host's Tailscale IP or MagicDNS name (e.g. `my-mac.tail12345.ts.net`). Tailscale must be installed and running on both devices.
+  </Step>
+  <Step title="Save and Connect">
+    Tap **Save**. Pix connects to the host and loads your sessions.
+  </Step>
+</Steps>
+
+You can save multiple hosts and switch between them from the host picker.
+
+---
+
+## Session Workflow
+
+The session experience on iPhone and iPad matches what you get on the Mac client:
+
+- Start a new session with the **+** button or the **⌘N** shortcut (iPad with external keyboard).
+- Type `@` in the composer to reference a file or folder; type `#` to reference another session.
+- Send your message with **⌘↩** or **Shift+↩** on an external keyboard, or tap the send button.
+- Monitor agent progress live as the agent works through your task.
+- Stop the agent at any time with the stop control in the toolbar.
+
+All session history, context, and workspace state live on the host — switching between your Mac and your iPhone or iPad picks up exactly where you left off.

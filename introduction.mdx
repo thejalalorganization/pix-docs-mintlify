@@ -1,0 +1,74 @@
+---
+title: "Introduction to Pix — Unified Coding Agent Workspace"
+sidebarTitle: "Introduction"
+description: "Pix is a native and web app that unifies Claude Code, Codex, Cursor, and Pi so you can hot-swap agents, run parallel jobs, and never lose context again."
+---
+
+Pix is a native and web application that brings every major coding agent into a single, coherent workspace. Before Pix, working with multiple AI coding agents meant maintaining separate terminal sessions, re-explaining your project in each tool, and losing the thread of your work every time you switched. Pix eliminates that friction by keeping your context warm across agents, persisting full session history, and letting you move between Claude Code, Codex, Cursor, and Pi as fluidly as switching tabs.
+
+## Why Pix exists
+
+Modern software teams rarely settle on a single coding agent. Different agents excel at different tasks — one may be faster for boilerplate generation, another more accurate for complex refactors, and a third better integrated with a particular language server. The cost of that flexibility has always been context loss and tooling sprawl. Pix was built specifically to remove that cost.
+
+When you hot-swap agents in Pix, the session context travels with you. When you kick off a background job, it runs without blocking your active session. When you need to revisit something from last Tuesday, you search history without waking any agent. Every capability is designed around the same principle: your workflow should shape the tool, not the other way around.
+
+## Key features
+
+<CardGroup cols={2}>
+  <Card title="Hot-Swap Agents" icon="arrows-rotate" href="/agents/claude-code">
+    Switch between Claude Code, Codex, Cursor, and Pi mid-task without losing session context. Pix keeps each agent's state warm so you can hand off work at any point.
+  </Card>
+  <Card title="Parallel Jobs" icon="layer-group" href="/guides/parallel-jobs">
+    Run multiple sessions and background jobs simultaneously. Queue up a long refactor while you continue chatting in a separate session — no waiting required.
+  </Card>
+  <Card title="Session History" icon="clock-rotate-left" href="/concepts/sessions">
+    Browse, search, and reference every past session with the `#` shorthand. Fork from any turn to explore an alternative approach without touching your current work.
+  </Card>
+  <Card title="Multi-Platform" icon="display" href="/installation">
+    Run Pix on Mac (server + client together), iPhone, iPad, Linux, or any web browser. Connect remotely over LAN or Tailscale.
+  </Card>
+</CardGroup>
+
+## Supported agents
+
+Pix currently integrates with the following coding agents:
+
+| Agent | Status |
+|---|---|
+| Claude Code | ✅ Available |
+| Codex | ✅ Available |
+| Cursor | ✅ Available |
+| Pi | ✅ Available |
+| OpenCode | 🔜 Coming soon |
+| GitHub Copilot | 🔜 Coming soon |
+
+<Note>
+  Agent availability may vary by platform. Check the individual agent pages for platform-specific setup instructions.
+</Note>
+
+## Supported platforms
+
+Pix is designed to follow you across every device and environment you work in:
+
+- **Mac** — The Mac app bundles both the Pix server and client. Apple Silicon is fully supported with a signed and notarized `.dmg`.
+- **iPhone** — A full-featured iOS client available via TestFlight, optimised for on-the-go session management.
+- **iPad** — The same TestFlight build delivers a desktop-class layout on iPad, making it comfortable for longer work sessions.
+- **Web browser** — Access any running Pix server from a browser without installing anything extra.
+- **Linux** — Native packages available for Ubuntu/Debian, Fedora/RHEL, and Arch-based distributions on both x64 and ARM64.
+
+### Remote access
+
+Connect to your Pix server from any of the above clients over your local network (LAN) or through [Tailscale](https://tailscale.com) for secure remote access from anywhere.
+
+## Additional capabilities
+
+Beyond agent management, Pix provides a set of power features you can layer in as your workflow grows:
+
+- **File and image attachments** — Use `@` to attach files or images directly in a session message.
+- **Session cross-references** — Use `#` to reference another session inline, giving agents full context from past conversations.
+- **MCP tool servers** — Connect any Model Context Protocol server to extend what your agents can do.
+- **Agent handoffs** — Transfer work from one agent to another, optionally forking from a specific turn in the conversation.
+
+## Next steps
+
+Ready to install Pix? Head to [Installation](/installation) for download links and setup instructions for every supported platform.

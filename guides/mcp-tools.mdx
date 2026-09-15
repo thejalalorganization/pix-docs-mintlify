@@ -1,0 +1,78 @@
+---
+title: "Connect MCP Tool Servers to Pix"
+sidebarTitle: "MCP Tools"
+description: "Extend what agents can do by connecting MCP tool servers — then find every tool, command, and skill from unified search in the same workspace."
+---
+
+MCP (Model Context Protocol) tool servers give agents access to external capabilities — querying a database, calling an API, reading from a custom data source, or running a specialized service. Pix connects to MCP servers at the workspace level, making those tools available to every agent session you run in that workspace without any per-session setup.
+
+## Why MCP Tools Matter
+
+Out of the box, agents can read and write files, run terminal commands, and work with your project's code. MCP tools extend that reach to anything you can wrap in a server: internal APIs, third-party services, company knowledge bases, deployment systems, observability platforms, and more.
+
+Once connected, MCP tools appear alongside built-in agent capabilities in unified search. The agent can call them like any other tool — no prompt engineering required to explain what they are or how to use them.
+
+## Connect an MCP Server
+
+<Steps>
+  <Step title="Open workspace settings">
+    Select your workspace name in the sidebar, then choose **Settings**. Navigate to the **MCP Tools** section.
+  </Step>
+  <Step title="Add the server configuration">
+    Select **Add MCP Server**. Enter the server details:
+
+    - **Name** — a label for the server that appears in search results
+    - **Transport** — `stdio` for local processes or `sse` / `http` for remote servers
+    - **Command or URL** — the command to start a local server, or the endpoint URL for a remote one
+    - **Environment variables** — any secrets or configuration the server needs (stored encrypted)
+
+    For example, to connect a local filesystem server:
+    ```
+    Name:      local-files
+    Transport: stdio
+    Command:   npx -y @modelcontextprotocol/server-filesystem /path/to/directory
+    ```
+  </Step>
+  <Step title="Save and verify">
+    Select **Save**. Pix starts the server process (for `stdio` transports) or establishes the connection (for remote transports) and lists the tools it exposes. A green indicator confirms the server is reachable and the tools are registered.
+  </Step>
+</Steps>
+
+Once connected, the tools are immediately available to agents in any session in that workspace. You don't need to restart sessions or re-configure per agent.
+
+## Find Tools with Unified Search
+
+Press **⌘K** anywhere in Pix to open unified search. It surfaces four categories of actions in a single list:
+
+<CardGroup cols={2}>
+  <Card title="Pix Actions" icon="bolt">
+    Built-in Pix commands — start a session, fork, hand off, open the diff view, manage worktrees, and more.
+  </Card>
+  <Card title="Agent-Native Commands" icon="terminal">
+    Commands the active agent supports directly, like running a test suite, applying a patch, or committing changes.
+  </Card>
+  <Card title="Project Skills" icon="briefcase">
+    Saved workflows and scripts scoped to the current project — reusable sequences you've defined for this codebase.
+  </Card>
+  <Card title="MCP Tools" icon="plug">
+    Every tool exposed by connected MCP servers, searchable by name and description.
+  </Card>
+</CardGroup>
+
+Type to filter across all four categories at once. Select an item to invoke it directly or insert it as an instruction for the agent.
+
+## Agent-Built Visualizations
+
+Agents can produce custom UI artifacts as part of a session — diagrams, interactive charts, custom data views, and extension surfaces built using tools from connected MCP servers. These appear directly in the conversation thread as live, interactive elements.
+
+For example, an agent connected to a metrics MCP server might generate a live dashboard card showing query results. An agent using a diagramming tool might produce an interactive architecture diagram you can explore and annotate inline.
+
+Visualizations stay in the conversation thread so they're part of the permanent record of the session.
+
+<Note>
+  MCP tool availability depends on the capabilities of the connected agent. Claude Code and Codex support MCP tool calls during agentic turns. Pi supports MCP tools in conversational context. Check your agent's documentation to confirm which tool transports and invocation patterns it supports. If a tool isn't being picked up, verify the server's health indicator in workspace settings and confirm the agent you're using supports `tools` in its API surface.
+</Note>
+
+<Tip>
+  Start with official MCP servers for the services your team already uses — there are published servers for GitHub, Slack, Postgres, Notion, and many others at [modelcontextprotocol.io](https://modelcontextprotocol.io). Connect one, run a session, and ask the agent to use it. Once you see how the tool calls appear in context, building or customizing your own servers becomes straightforward.
+</Tip>

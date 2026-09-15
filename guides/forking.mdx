@@ -1,0 +1,68 @@
+---
+title: "Fork Sessions to Branch Your Work in Pix"
+sidebarTitle: "Forking"
+description: "Branch from any completed turn to explore alternatives, try a different approach, or experiment safely — without changing the original conversation."
+---
+
+Forking creates a new session that starts from any completed turn in an existing conversation. The original session is completely untouched — you can explore a different approach, try a riskier change, or hand the branch to a different agent, and the fork stays independent no matter what happens in it.
+
+## When to Fork
+
+<CardGroup cols={2}>
+  <Card title="Explore alternative implementations" icon="code-branch">
+    You've built one version of a feature. Fork from the turn where the work was complete and ask the agent to try a different architecture, library, or algorithm. Compare the two branches before deciding which to ship.
+  </Card>
+  <Card title="Try a risky change safely" icon="shield">
+    Before making a change you're uncertain about — a large refactor, a schema migration, a significant API redesign — fork and make the change there first. If it doesn't work out, the original is intact.
+  </Card>
+  <Card title="Run a side investigation" icon="magnifying-glass">
+    A question comes up mid-session that would derail the main thread. Fork, investigate, then bring the findings back to the original conversation via a `#` reference.
+  </Card>
+  <Card title="Test with a different agent" icon="robot">
+    Fork the session and hand it off to a different agent to see how it approaches the same problem from the same starting point.
+  </Card>
+</CardGroup>
+
+## How to Fork
+
+<Steps>
+  <Step title="Navigate to a completed turn">
+    Scroll to any completed turn in the session transcript — your message, the agent's response, or a tool result. Forks can only be created from turns that have fully completed.
+  </Step>
+  <Step title="Use the fork action">
+    Hover over the turn to reveal the turn actions, then select **Fork**. Pix creates a new session that begins with the full conversation history up to and including that turn.
+  </Step>
+  <Step title="Work in the fork">
+    The forked session opens as an independent conversation. Send your next message — the agent has the same context as the original session at that point in time, but anything you do here has no effect on the original.
+  </Step>
+</Steps>
+
+## Forked Sessions Are Fully Independent
+
+Once created, a fork stands alone. Edits made in the fork — file changes, new turns, agent configuration — don't propagate back to the original session, and changes made in the original don't appear in the fork. The two sessions share the history up to the fork point and nothing after it.
+
+You can fork a fork. If the second branch also produces something interesting, fork again. Each branch is tracked separately and can be labeled, pinned, or archived independently.
+
+## Agent-Launched Sessions
+
+When an agent starts a Pix session on your behalf — for example, as part of an agentic workflow where one agent delegates a subtask to another — Pix surfaces that session as a visible, linked work item. It appears in the session list connected to the parent session that launched it, so you can:
+
+- See that the work is happening without digging through logs
+- Follow the sub-session's progress in real time
+- Intervene or stop the sub-session if needed
+- Review its output before the parent agent incorporates it
+
+Agent-launched sessions are never hidden background processes. Every session Pix runs, whether you started it or an agent did, is visible and accessible.
+
+## Manage Forked Sessions
+
+Use the session list to keep your branches organized:
+
+- **Label** — give a fork a descriptive name so it's easy to find later ("alt-implementation", "schema-migration-attempt", "pi-review-branch")
+- **Pin** — pin active branches to the top of the session list so they stay accessible during a multi-branch exploration
+- **Archive** — archive forks you're done with to keep the session list clean without permanently deleting them
+- **Delete** — remove a fork entirely when you're certain the branch won't be needed
+
+<Tip>
+  Combine forking with handoffs for maximum flexibility. Fork a session, hand the fork off to a different agent, and compare the results in a split view using a `#` reference. This is a fast way to benchmark how Claude Code, Codex, or Pi would each approach the same problem from identical starting context.
+</Tip>

@@ -1,0 +1,53 @@
+---
+title: "Using Codex with Pix"
+sidebarTitle: "Codex"
+description: "Connect OpenAI's Codex to Pix for parallel coding jobs, background tasks, and seamless hot-swap handoffs to other agents."
+---
+
+Codex is OpenAI's coding model, purpose-built for generating, transforming, and reasoning about code at scale. Pix integrates Codex into its unified workspace so you can run parallel jobs, queue background tasks, and hand work off to other agents — all while keeping your conversation and project context intact.
+
+## Connecting Codex to Pix
+
+1. Open **Settings** in the Pix sidebar.
+2. Select **Agents**, then click **Add Agent**.
+3. Choose **Codex** from the agent list.
+4. Authorize with your OpenAI credentials when prompted.
+5. Once connected, Codex appears in your agent selector and is immediately available across all sessions.
+
+## Capabilities Pix Surfaces for Codex
+
+Pix only exposes controls that Codex genuinely supports, so every setting you see is actionable.
+
+<CardGroup cols={2}>
+  <Card title="Model Selection" icon="microchip">
+    Choose from available Codex model variants to match capability and cost requirements for each task.
+  </Card>
+  <Card title="Context & Speed Settings" icon="sliders">
+    Tune the context window size and response speed to optimize for throughput on large or time-sensitive jobs.
+  </Card>
+  <Card title="Stop Support" icon="stop">
+    Interrupt Codex mid-turn cleanly. Pix delivers the stop signal immediately so you can redirect without waiting for the full output.
+  </Card>
+</CardGroup>
+
+<Note>
+  Pix only renders controls that Codex actually supports. Settings that don't apply to this agent are never shown — they simply aren't relevant here.
+</Note>
+
+## Using Codex in a Session
+
+**Running parallel jobs**
+Codex is well-suited to high-throughput coding tasks. Open multiple sessions in Pix and assign different jobs to each — Codex handles them concurrently while you monitor progress from the unified workspace.
+
+**Queueing background tasks**
+Start a long-running Codex task, then switch to another session without interrupting it. Pix keeps the runtime attached only during active turns, so idle sessions don't consume unnecessary resources.
+
+**Monitoring and steering**
+Return to any active Codex session at any time. If the output is off-track, use **Stop** to interrupt, adjust your prompt, and resend — or hot-swap to a different agent without losing context.
+
+## Tips for Getting the Most Out of Codex
+
+- **Hand off mid-project** — Run initial code generation with Codex, then swap to Claude Code for deeper reasoning or debugging. Use the hot-swap control to transfer the session; Pix carries all context forward automatically so the next agent starts fully informed.
+- **Use context controls for large repos** — For big codebases, dial down the context window on routine generation tasks to improve speed. Raise it again when Codex needs to understand cross-file dependencies.
+- **Combine with conversational agents** — Start a task in Pi to sketch out requirements in plain language, then hand the refined spec to Codex for implementation without rebuilding context.
+- **Leverage Stop aggressively** — Codex is fast. If an early output looks wrong, stop immediately rather than waiting for a full response. Short feedback loops produce better results.

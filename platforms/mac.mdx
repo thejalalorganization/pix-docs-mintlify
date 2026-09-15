@@ -1,0 +1,113 @@
+---
+title: "Pix for Mac: Server, Client, and Multi-Host Setup"
+sidebarTitle: "Mac"
+description: "Download Pix for Apple Silicon, run a server and client on one Mac, or connect as a client to any saved Pix host over LAN or Tailscale."
+---
+
+The Mac app gives you the full Pix experience in a single download: run a server and client together on one machine, or use your MacBook as a lightweight client that connects to a Pix server running elsewhere. Your workspace lives on the server; every client that connects to it shares the same sessions, files, and agent context in real time.
+
+## Download and Install
+
+1. Download the signed and notarized `.dmg` from the link below.
+2. Open the `.dmg` file and drag **Pix** into your **Applications** folder.
+3. Launch Pix from Applications (or Spotlight). macOS may ask you to confirm opening a downloaded app — click **Open**.
+
+<Card title="Download Pix for Mac (Apple Silicon)" icon="apple" href="https://pix-update-service.ritesh-pix.workers.dev/prod/mac">
+  Signed and notarized production release · `.dmg`
+</Card>
+
+> Pix for Mac requires Apple Silicon (M1 or later).
+
+---
+
+## Server + Client Mode (Default)
+
+When you launch Pix on a Mac that hasn't been configured as a client-only machine, it starts both the **server** (which hosts your workspace) and the **client** (the UI you interact with) on the same machine. This is the simplest setup and requires no additional configuration.
+
+- Your workspace files, sessions, and agent history are stored locally on that Mac.
+- Other devices — iPhones, iPads, other Macs, or a browser — can connect to this Mac as a host.
+- No dedicated server hardware is needed.
+
+---
+
+## Client-Only Mode
+
+Use your Mac as a Pix client without moving your workspace. In client-only mode, Pix connects to a remote Pix server instead of running one locally. This is ideal when:
+
+- You want to keep your workspace on a more powerful desktop Mac and work from a MacBook.
+- You're sharing a team server and don't need a local workspace.
+
+To switch to client-only mode, open **Pix Settings → Server** and disable the local server. Then add the host you want to connect to (see [Adding Hosts](#adding-hosts) below).
+
+---
+
+## Adding Hosts
+
+A **host** is any Mac running the Pix server. You can save multiple hosts and switch between them from the Pix client.
+
+To add a host:
+
+<Steps>
+  <Step title="Open Host Settings">
+    In Pix, go to **Settings → Hosts** and click **Add Host**.
+  </Step>
+  <Step title="Enter the Host Address">
+    Enter the host's LAN IP address (e.g. `192.168.1.42`) or its Tailscale address (e.g. `hostname.tail12345.ts.net`). Give the host a friendly name so you can identify it later.
+  </Step>
+  <Step title="Save and Connect">
+    Click **Save**. Pix will attempt to connect immediately. Once connected, the host appears in your host list and you can switch to it at any time.
+  </Step>
+</Steps>
+
+---
+
+## LAN Connection
+
+When your client device and the Pix host are on the same local network, Pix automatically uses a **direct LAN route** — the fastest possible connection with minimal latency. No extra configuration is required; just enter the host's local IP address when adding the host.
+
+<Tip>
+  Find the host Mac's local IP address in **System Settings → Network → Wi-Fi (or Ethernet) → Details**.
+</Tip>
+
+---
+
+## Tailscale Connection
+
+To reach your Pix host from outside your local network — from a coffee shop, another office, or anywhere on the internet — use **Tailscale**. Tailscale creates a secure, encrypted overlay network between your devices.
+
+<Steps>
+  <Step title="Install Tailscale on Both Machines">
+    Download and install [Tailscale](https://tailscale.com/download) on the host Mac and on your client device. Sign in to the same Tailscale account on both.
+  </Step>
+  <Step title="Find the Host's Tailscale Address">
+    On the host Mac, open the Tailscale menu bar icon and copy the machine's **Tailscale IP** (e.g. `100.x.y.z`) or its **MagicDNS name** (e.g. `my-mac.tail12345.ts.net`).
+  </Step>
+  <Step title="Add the Host in Pix">
+    On the client, go to **Pix Settings → Hosts → Add Host** and enter the Tailscale address you copied. Save and connect.
+  </Step>
+</Steps>
+
+Pix saves the Tailscale route alongside the LAN route for each host. When you're on the local network, Pix uses LAN; when you're remote, it routes through Tailscale automatically.
+
+---
+
+## Multi-Host and Multi-Client Setup
+
+Pix scales to teams and power users who work across many machines:
+
+<CardGroup cols={2}>
+  <Card title="Multiple Clients" icon="devices">
+    Connect your Mac, iPhone, iPad, and browser to the same Pix host simultaneously. All clients share live session state.
+  </Card>
+  <Card title="Multiple Hosts" icon="server">
+    Save as many hosts as you need — a home desktop, a work Mac, a cloud VM. Switch between them from the host picker in the Pix sidebar.
+  </Card>
+</CardGroup>
+
+There is no limit on the number of saved hosts or simultaneous client connections.
+
+---
+
+<Tip>
+  Keep your server Mac awake and online for uninterrupted remote access. On macOS, go to **System Settings → Battery → Options** (or **Energy Saver**) and enable **Prevent sleeping when the display is off** (or use the `caffeinate` command). If the Mac sleeps, remote clients will lose their connection until it wakes.
+</Tip>

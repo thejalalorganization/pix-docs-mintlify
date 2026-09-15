@@ -1,0 +1,51 @@
+---
+title: "Pix FAQ: Common Questions Answered"
+sidebarTitle: "FAQ"
+description: "Answers to the most common questions about Pix — agents, subscriptions, multi-device access, networking, sessions, and MCP tool servers."
+---
+
+Find quick answers to the most common questions about Pix below. If something isn't covered here, reach out through the in-app feedback button or the community forum.
+
+<AccordionGroup>
+
+  <Accordion title="What coding agents does Pix support?">
+    Pix currently supports **Claude Code**, **Codex**, **Cursor**, and **Pi**. Support for **OpenCode** and **GitHub Copilot** is coming soon. Pix acts as a unified interface — you switch between agents from within Pix rather than switching apps.
+  </Accordion>
+
+  <Accordion title="Do I need separate subscriptions for each agent?">
+    Yes. Pix connects to each agent using your existing credentials and API access — it does not bundle agent subscriptions. You need an active account (and, where applicable, an API key or OAuth connection) with each agent provider you want to use. Pix itself does not charge per-agent fees on top of what the providers charge.
+  </Accordion>
+
+  <Accordion title="Can I use Pix on multiple devices?">
+    Yes. You can connect as many clients as you like — Mac, iPhone, iPad, and web browser — to a single Pix server simultaneously. All clients share live session state, so picking up on your iPhone after working on your Mac requires no manual sync.
+  </Accordion>
+
+  <Accordion title="How do I access Pix from outside my local network?">
+    Install [Tailscale](https://tailscale.com/download) on both the machine running the Pix server and the device you want to connect from. Once both devices are on the same Tailscale network, enter the host's Tailscale IP address or MagicDNS name in Pix's host settings. Tailscale encrypts the connection end-to-end and works from anywhere with an internet connection.
+  </Accordion>
+
+  <Accordion title="What happens to my context when I switch agents?">
+    Pix preserves the relevant conversation and project context during agent handoffs. When you switch from one agent to another inside a session, Pix carries over the message history and workspace context so the incoming agent has what it needs to continue — you don't have to re-explain the task from scratch.
+  </Accordion>
+
+  <Accordion title="Can I run multiple agent sessions at the same time?">
+    Yes. Pix supports parallel sessions, and each session runs independently. You can kick off a long-running refactor in one session, start a new feature in another, and monitor live progress on both from the sessions panel — switching between them doesn't interrupt either agent.
+  </Accordion>
+
+  <Accordion title="Is there a web client?">
+    Yes. When your Pix server is running, it also serves a web client at the host's local address (shown in **Settings → Server**). Open that address in any browser — Chrome, Safari, Firefox, or Edge — for full session browsing and chat without installing anything. To reach it remotely, use Tailscale and open the host's Tailscale address in your browser.
+  </Accordion>
+
+  <Accordion title="Is Pix available on Android or Windows?">
+    Not yet. **Android** support is coming soon. **Windows** is on the roadmap but will take a bit more time. In the meantime, Windows and Android users can access Pix via the web client — open your host's address in a mobile or desktop browser for a full session experience.
+  </Accordion>
+
+  <Accordion title="What are MCP tool servers?">
+    **MCP (Model Context Protocol) tool servers** are external services that extend what agents can do — for example, searching the web, querying a database, running shell commands, or integrating with third-party APIs. You connect MCP tool servers to your workspace in **Settings → MCP Tools**. Once connected, any agent running in that workspace can invoke the tools, and you can also discover them through the `⌘K` unified search.
+  </Accordion>
+
+  <Accordion title="How do I fork a session?">
+    Navigate to any completed turn in a session and look for the **Fork** action (available in the turn's context menu or action bar). Forking creates a new session branched from that point in history — the original session is untouched, and you can explore a different approach in the fork without affecting your existing work. This is useful for trying out an alternative fix or comparing agent strategies side by side.
+  </Accordion>
+
+</AccordionGroup>

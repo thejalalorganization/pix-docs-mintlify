@@ -1,0 +1,114 @@
+---
+title: "Sessions: How Pix Manages Agent Conversations"
+sidebarTitle: "Sessions"
+description: "Understand how Pix sessions work — from lifecycle and states to history search, forking, cross-session references, and usage tracking."
+---
+
+A **session** in Pix is a complete conversation with a coding agent, including every message, tool call, file change, and decision made along the way. Sessions are the primary unit of work in Pix — you create one to start a task, and everything that happens inside it is captured, searchable, and resumable.
+
+## Session Lifecycle
+
+Every session moves through a clear set of states from creation to completion.
+
+<Steps>
+  <Step title="Created">
+    A session starts when you open a new conversation in a project. It's associated with a project, an agent, and optionally a repository worktree.
+  </Step>
+  <Step title="Running">
+    The agent is active and processing. Tool calls, file edits, and terminal output stream into the session in real time.
+  </Step>
+  <Step title="Waiting">
+    The agent has paused and is expecting input from you — a decision, a clarification, or an approval to proceed.
+  </Step>
+  <Step title="Saved">
+    The agent has completed its work and the session is no longer active. The full transcript is stored and immediately accessible without waking the agent.
+  </Step>
+</Steps>
+
+## Session States and Labels
+
+Beyond the lifecycle states above, you can apply labels to organize and prioritize sessions across your projects.
+
+<CardGroup cols={2}>
+  <Card title="Pin" icon="thumbtack">
+    Keep important sessions at the top of your project catalog so they're always within reach.
+  </Card>
+  <Card title="Todo" icon="circle-check">
+    Mark a session as something you need to return to. Useful for work in progress or decisions you've deferred.
+  </Card>
+  <Card title="Resolved" icon="check-circle">
+    Signal that a session's task is complete. Resolved sessions stay in history but are visually separated from active work.
+  </Card>
+  <Card title="Archive" icon="box-archive">
+    Move sessions you no longer need day-to-day out of your main view without deleting them.
+  </Card>
+</CardGroup>
+
+## Browsing History Without Waking an Agent
+
+Pix loads past sessions instantly from storage — the agent runtime is never contacted just to read a conversation. You can scroll through the full transcript, review tool calls, and inspect file changes from any saved session at no cost and with no delay.
+
+<Note>
+  Agents are only attached when you send a message. Reading history, searching, and forking are all read-only operations that don't consume tokens.
+</Note>
+
+## Searching Sessions
+
+Use Pix's session search to find anything across a session's full history — not just messages, but tool calls, filenames, and decisions.
+
+You can search for:
+- **Messages** — words or phrases from any turn in the conversation
+- **Tool calls** — specific commands the agent ran or files it edited
+- **Files** — surface every session that touched a particular path
+- **Decisions** — find where a specific choice was made or direction was set
+
+Search works across the entire session depth without paging — Pix indexes session content so results appear immediately.
+
+## Forking a Session
+
+Fork lets you branch from any completed turn in a session, creating a new session that starts from that point. The original session is never modified.
+
+<Steps>
+  <Step title="Find the turn you want to branch from">
+    Scroll to the message or agent response in the session transcript where you want to diverge.
+  </Step>
+  <Step title="Fork from that turn">
+    Select **Fork** on the turn. Pix creates a new session with the conversation history up to and including that point.
+  </Step>
+  <Step title="Continue independently">
+    The forked session is fully independent. Changes in the fork don't affect the original, and vice versa.
+  </Step>
+</Steps>
+
+<Tip>
+  Forking is ideal for exploring alternative approaches — try a different solution path without throwing away work the agent already completed.
+</Tip>
+
+## Session References with #
+
+Reference another session inside your current conversation using `#`. Type `#` in the composer to search and select a session by name or content, then include it in your message.
+
+When you reference a session, the agent receives its context — useful for:
+- **Handoffs** — continue work from a previous session with a different agent
+- **Comparisons** — ask an agent to contrast two different approaches across sessions
+- **Context injection** — pull in relevant background from an earlier investigation
+
+## Agent-Launched Sub-Sessions
+
+When an agent starts a Pix session on your behalf — for example, spinning up a background research task or spawning a sub-agent — that work appears in your project as a **linked session**. Sub-sessions are visible, trackable work items, not hidden background processes. You can open them, inspect their progress, and reference them just like any other session.
+
+## Usage and Context Information
+
+Pix surfaces usage details for each session so you always know where you stand.
+
+<Accordion title="Token consumption">
+  View how many tokens the current session has consumed, broken down by input and output. Pix tracks this per turn so you can identify expensive steps.
+</Accordion>
+
+<Accordion title="Context occupancy">
+  See how much of the agent's available context window the session is using. As sessions grow, Pix shows context occupancy so you can decide whether to fork or start fresh.
+</Accordion>
+
+<Accordion title="Provider limits">
+  Pix displays both **reported** limits (what the provider documents) and **estimated** values (what Pix calculates from observed behavior) so you have an accurate picture even when provider documentation lags behind actual model behavior.
+</Accordion>

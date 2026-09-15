@@ -1,0 +1,68 @@
+---
+title: "Pix Web Client: Access Your Workspace from Any Browser"
+sidebarTitle: "Web"
+description: "Open your Pix host's address in any browser to browse sessions, chat with agents, and manage your workspace — no installation required."
+---
+
+The Pix web client lets you reach your coding agent sessions from any browser without installing anything. When your Pix server is running on a Mac or Linux machine, it also serves the web client — open the host's address in Chrome, Safari, Firefox, or Edge and you're in. It's the right choice when you're on a borrowed machine, a Chromebook, or any device where installing a native app isn't practical.
+
+---
+
+## How to Access
+
+Your Pix host exposes a local web address as soon as the server starts. To open the web client:
+
+<Steps>
+  <Step title="Find Your Host's Web Address">
+    On the machine running the Pix server, open **Pix Settings → Server** and note the local web address — typically something like `http://192.168.1.42:PORT` or `http://localhost:PORT`. The exact address is shown in the settings panel.
+  </Step>
+  <Step title="Open the Address in a Browser">
+    On any device on the same network, paste the address into your browser's address bar and press **Enter**. The Pix web client loads immediately — no login screen if you're accessing from a trusted network.
+  </Step>
+  <Step title="Connect and Work">
+    Your sessions, project context, and workspace tools are available just as they are in the native clients. Start chatting with an agent, review session history, or check agent progress.
+  </Step>
+</Steps>
+
+---
+
+## Connecting to a Host
+
+The web client connects to whichever host served it — there is no separate host-picker step when you open the address directly. If you manage multiple hosts, open each host's own web address in a separate tab.
+
+<Tip>
+  To access your Pix host securely from outside your local network, install [Tailscale](https://tailscale.com/download) on both the host machine and your remote device. Once connected to your Tailscale network, use the host's Tailscale IP or MagicDNS name (e.g. `http://my-mac.tail12345.ts.net:PORT`) in your browser instead of the LAN address. Your traffic stays encrypted end-to-end.
+</Tip>
+
+---
+
+## Feature Parity with Native Clients
+
+The web client supports the full core session workflow:
+
+<CardGroup cols={2}>
+  <Card title="Session Browsing" icon="list">
+    View, search, and resume all of your active and past sessions.
+  </Card>
+  <Card title="Chat and Composer" icon="message">
+    Send messages to agents, use `@` to reference files and `#` to reference sessions, and track live agent progress.
+  </Card>
+  <Card title="Workspace Tools" icon="folder-open">
+    Browse your project files, review diffs, and inspect agent output directly in the browser.
+  </Card>
+  <Card title="MCP Tool Servers" icon="plug">
+    Interact with any MCP tool servers configured on the host — the web client surfaces them the same way native clients do.
+  </Card>
+</CardGroup>
+
+---
+
+## Limitations
+
+The web client depends entirely on what the connected host makes available. A few things to keep in mind:
+
+- **No offline support** — if the host goes to sleep or loses network connectivity, the browser session disconnects. Refresh and reconnect once the host is reachable again.
+- **Host-gated features** — any capability that requires a native OS integration (such as system notifications or file-picker access to local files on *your* device) will behave differently or may not be available in the browser.
+- **Browser storage** — the web client does not persist workspace data in the browser; everything is fetched from the host on each visit.
+
+For the full native experience — including background notifications and deeper OS integration — use the [Mac](/platforms/mac), [iPhone & iPad](/platforms/iphone-ipad), or [Linux](/platforms/linux) clients.

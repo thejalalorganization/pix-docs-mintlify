@@ -1,0 +1,103 @@
+---
+title: "Installing Pix on Mac, Linux, iPhone, and iPad"
+sidebarTitle: "Installation"
+description: "Download and install Pix on Apple Silicon Mac, Ubuntu, Fedora, Arch Linux, iPhone, or iPad. Get the server and client running in minutes."
+---
+
+Pix is available as a native app on Mac, Linux, iPhone, and iPad, and as a web client you can reach from any browser once the server is running. Choose your platform below, follow the steps, and you'll be ready to connect your first agent.
+
+<Tabs>
+  <Tab title="Mac">
+    Pix for Mac ships as a signed and notarised disk image for **Apple Silicon** (M-series). The Mac app bundles both the Pix server and the desktop client, so a single install is all you need.
+
+    <Steps>
+      <Step title="Download the disk image">
+        [Download Pix for Mac (Apple Silicon .dmg)](https://pix-update-service.ritesh-pix.workers.dev/prod/mac)
+
+        Your browser will download a `.dmg` file. If macOS prompts you about an unidentified developer, open **System Settings → Privacy & Security** and click **Open Anyway** — the app is notarised by Apple and safe to run.
+      </Step>
+      <Step title="Open the disk image">
+        Double-click the downloaded `.dmg` to mount it. A Finder window will open showing the Pix app icon alongside your Applications folder.
+      </Step>
+      <Step title="Drag Pix to Applications">
+        Drag the Pix icon into the **Applications** folder shortcut in the same window. macOS will copy the app. Once the copy finishes, eject the disk image.
+      </Step>
+      <Step title="Launch Pix">
+        Open **Launchpad** or navigate to `/Applications` in Finder, then double-click **Pix** to launch it. The server starts automatically in the background, and the desktop client opens immediately.
+      </Step>
+    </Steps>
+
+    <Note>
+      The Mac app runs the Pix server and the desktop client together. Other devices on your network — iPhone, iPad, or a browser — can connect to your Mac's Pix server over LAN or Tailscale.
+    </Note>
+  </Tab>
+
+  <Tab title="Linux">
+    Pix for Linux is distributed as native packages for the most popular distributions on both **x64** and **ARM64** architectures.
+
+    | Distribution | Architecture | Format | Download |
+    |---|---|---|---|
+    | Ubuntu / Debian | x64 | `.deb` | [Download](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/deb/x64) |
+    | Fedora / RHEL | x64 | `.rpm` | [Download](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/rpm/x64) |
+    | Arch / CachyOS | x64 | `.pkg.tar.zst` | [Download](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/pacman/x64) |
+    | Ubuntu / Debian | ARM64 | `.deb` | [Download](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/deb/arm64) |
+    | Fedora / RHEL | ARM64 | `.rpm` | [Download](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/rpm/arm64) |
+
+    **Ubuntu / Debian (`.deb`)**
+
+    ```bash
+    sudo dpkg -i pix_*.deb
+    ```
+
+    **Fedora / RHEL (`.rpm`)**
+
+    ```bash
+    sudo rpm -i pix_*.rpm
+    ```
+
+    **Arch / CachyOS (`.pkg.tar.zst`)**
+
+    ```bash
+    sudo pacman -U pix_*.pkg.tar.zst
+    ```
+
+    After installation, start Pix from your application launcher or run `pix` from the terminal. The server starts on first launch and you can reach the web client from any browser on the same machine or network.
+
+    <Tip>
+      On Linux, Pix runs the server in the background as a user process. You can access the full Pix interface from your browser at `http://localhost` (check the terminal output for the exact port on first run).
+    </Tip>
+  </Tab>
+
+  <Tab title="iPhone & iPad">
+    Pix for iOS and iPadOS is currently distributed through **Apple TestFlight**. You'll need a free TestFlight account (the app prompts you to create one if you don't have it).
+
+    <Steps>
+      <Step title="Open the TestFlight invite">
+        Tap the link below on your iPhone or iPad — it will open the TestFlight app or prompt you to install it from the App Store first.
+
+        [Join the Pix beta on TestFlight](https://testflight.apple.com/join/u29zT3mc)
+      </Step>
+      <Step title="Accept the beta invite">
+        In TestFlight, tap **Accept** on the Pix beta invitation. TestFlight will confirm your access and show the Pix app listing.
+      </Step>
+      <Step title="Install Pix">
+        Tap **Install** on the Pix listing in TestFlight. The app will download and appear on your home screen like any other app.
+      </Step>
+      <Step title="Connect to your Pix server">
+        Open Pix on your device and enter the address of your running Pix server — either the local IP over LAN (e.g. `192.168.x.x`) or your Tailscale address for remote access.
+      </Step>
+    </Steps>
+
+    <Note>
+      **iPad** receives a desktop-class layout with a multi-column interface, making it well-suited for longer coding sessions. Both iPhone and iPad run the same TestFlight build.
+    </Note>
+  </Tab>
+</Tabs>
+
+<Note>
+  **Android** and **Windows** clients are not yet available but are on the roadmap. In the meantime, Windows users can access a running Pix server (on Mac or Linux) through any modern web browser.
+</Note>
+
+## Next steps
+
+With Pix installed, you're ready to connect your first agent and start a session. Head to the [Quickstart](/quickstart) guide to get up and running in a few minutes.

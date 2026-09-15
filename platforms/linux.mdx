@@ -1,0 +1,79 @@
+---
+title: "Pix for Linux: Download and Install on Any Distro"
+sidebarTitle: "Linux"
+description: "Install Pix on Ubuntu, Debian, Fedora, RHEL, Arch, or CachyOS — available as .deb, .rpm, and .pkg.tar.zst packages for x64 and ARM64."
+---
+
+Pix runs natively on Linux and ships packages for the three major distribution families: Debian-based (Ubuntu, Debian), RPM-based (Fedora, RHEL), and Arch-based (Arch Linux, CachyOS). Both x64 and ARM64 architectures are supported. Install Pix as a server to host your workspace, as a client to connect to a remote Pix host, or as both — the same way you would on Mac.
+
+---
+
+## Download and Install
+
+Find your distribution below, download the package, and run the install command.
+
+### Ubuntu / Debian — x64
+
+```bash
+# Download
+wget https://pix-update-service.ritesh-pix.workers.dev/prod/linux/deb/x64 -O pix.deb
+
+# Install
+sudo dpkg -i pix.deb
+```
+
+### Ubuntu / Debian — ARM64
+
+Download the ARM64 `.deb` package for machines running 64-bit ARM (e.g. Raspberry Pi 4/5 running a 64-bit OS, Ampere-based cloud VMs):
+
+```bash
+# Download (replace the URL with the ARM64 .deb link from pix.dev/downloads)
+sudo dpkg -i pix-arm64.deb
+```
+
+### Fedora / RHEL — x64
+
+```bash
+# Install directly from the package file
+sudo rpm -i pix.x86_64.rpm
+```
+
+### Fedora / RHEL — ARM64
+
+```bash
+sudo rpm -i pix.aarch64.rpm
+```
+
+### Arch Linux / CachyOS — x64
+
+```bash
+sudo pacman -U pix.pkg.tar.zst
+```
+
+---
+
+## All Packages at a Glance
+
+| Distribution | Architecture | Format |
+|---|---|---|
+| Ubuntu / Debian | x64 | [`.deb` ↓](https://pix-update-service.ritesh-pix.workers.dev/prod/linux/deb/x64) |
+| Ubuntu / Debian | ARM64 | `.deb` |
+| Fedora / RHEL | x64 | `.rpm` |
+| Fedora / RHEL | ARM64 | `.rpm` |
+| Arch / CachyOS | x64 | `.pkg.tar.zst` |
+
+---
+
+## After Installation
+
+Once installed, launch Pix from your application launcher or run `pix` from the terminal. On first launch, Pix starts the server and opens the client. You can then:
+
+- **Add a host** — connect to a remote Pix server by entering its LAN IP or Tailscale address in **Settings → Hosts**.
+- **Configure Tailscale** — install [Tailscale](https://tailscale.com/download/linux) on this machine to reach it (or reach other hosts) securely from outside your local network.
+- **Open the web client** — your Linux Pix server also serves the web client at the address shown in **Settings → Server**.
+
+---
+
+<Note>
+  **Android** support is coming soon. **Windows** support is also on the roadmap and will take a bit more time. Follow [pix.dev](https://pix.dev) or the release notes for updates.
+</Note>

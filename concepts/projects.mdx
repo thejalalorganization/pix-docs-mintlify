@@ -1,0 +1,77 @@
+---
+title: "Projects: Organize Your Work in Pix"
+sidebarTitle: "Projects"
+description: "Learn how Pix projects group sessions into focused catalogs, connect to Git repositories, and keep your workspace organized as history grows."
+---
+
+A **project** in Pix is a focused catalog of sessions tied to a repository or workspace. Instead of one undifferentiated list of all conversations you've ever had, projects give you a clean boundary around a body of work — every session related to a codebase, feature, or investigation lives together and stays easy to find.
+
+## What a Project Contains
+
+When you open a project, you see every session created within it, organized chronologically with labels, states, and worktree information visible at a glance. Projects hold:
+
+- All sessions and their full transcripts
+- Repository and worktree associations
+- Visual outputs — images, video, PDFs, and generated artifacts
+- Session labels (pinned, Todo, resolved, archived)
+
+## Repository-Linked Projects
+
+Connect a project to a Git repository and Pix surfaces checkout information throughout the interface. The active worktree appears in session rows, the composer, and workspace controls so you always know which branch or worktree an agent is operating against.
+
+<Steps>
+  <Step title="Link a repository">
+    When creating or editing a project, select the local Git repository you want to associate with it. Pix indexes the repo and makes its worktrees available to sessions.
+  </Step>
+  <Step title="Work with worktrees">
+    Each session can be associated with a specific worktree. Pix shows the active checkout in the session row so you can distinguish parallel workstreams at a glance.
+  </Step>
+  <Step title="Compare changes">
+    Pix lets you compare local changes against worktree changes directly in the project, giving you a clear picture of what each agent modified and where.
+  </Step>
+</Steps>
+
+<Note>
+  Worktree identity is shown in the composer and workspace controls throughout a session, not just in the project list. You always know which checkout the active agent is working against.
+</Note>
+
+## Scratch Workspaces
+
+Not every conversation needs a repository. Open a **scratch project** for research, prototyping, or general agent conversations where no codebase is involved.
+
+Scratch workspaces give you:
+- A fully functional project environment with sessions, history, and search
+- No repository required — nothing to configure before you start
+- The same agent support and session features as repository-linked projects
+- A private space to explore ideas before they become real work
+
+<Tip>
+  Use scratch projects to think through architecture, draft a plan, or experiment with an unfamiliar library before opening a repository-linked project to execute.
+</Tip>
+
+## Large Session Catalogs
+
+Projects load progressively as your session history grows. Recent sessions are always immediately responsive — Pix fetches older sessions in the background as you scroll, so a project with hundreds of sessions feels just as fast as a new one.
+
+<Accordion title="How progressive loading works">
+  Pix loads the most recent sessions first and streams older pages into the catalog as you scroll. Search indexes the full history regardless of what's currently loaded in the view, so you can always find old sessions without manually paging through the list.
+</Accordion>
+
+## Visual Outputs and Generated Artifacts
+
+Pix renders visual output produced during sessions directly in the project, so you don't need to leave the interface to review what an agent created.
+
+<CardGroup cols={2}>
+  <Card title="Images and Video" icon="photo-film">
+    Preview images and video generated or captured during a session inline in the project view.
+  </Card>
+  <Card title="PDFs" icon="file-pdf">
+    Open PDF outputs in the project without switching to another application.
+  </Card>
+  <Card title="Markdown and HTML" icon="code">
+    Open generated Markdown and HTML documents beside the session so you can read the output alongside the conversation that produced it.
+  </Card>
+  <Card title="Code Artifacts" icon="file-code">
+    View generated code files in the artifact pane next to the session transcript for easy review and reference.
+  </Card>
+</CardGroup>

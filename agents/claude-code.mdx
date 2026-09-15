@@ -1,0 +1,56 @@
+---
+title: "Using Claude Code with Pix"
+sidebarTitle: "Claude Code"
+description: "Connect Anthropic's Claude Code to Pix and use capability-aware controls to steer, stop, and hot-swap your coding sessions."
+---
+
+Claude Code is Anthropic's autonomous coding agent — capable of writing, editing, and reasoning about code across your entire project. Pix integrates Claude Code directly into its unified workspace, so you can manage sessions, adjust model settings, and hand off work to other agents without losing a single line of context.
+
+## Connecting Claude Code to Pix
+
+1. Open **Settings** in the Pix sidebar.
+2. Select **Agents**, then click **Add Agent**.
+3. Choose **Claude Code** from the agent list.
+4. Authorize with your Anthropic credentials when prompted.
+5. Once connected, Claude Code appears in your agent selector and is ready to use in any session.
+
+## Capabilities Pix Surfaces for Claude Code
+
+Pix exposes only the controls Claude Code genuinely supports, keeping the interface clean and unambiguous.
+
+<CardGroup cols={2}>
+  <Card title="Model Selection" icon="microchip">
+    Switch between available Claude model versions (e.g. Claude 3.5 Sonnet, Claude 3 Opus) without leaving your session.
+  </Card>
+  <Card title="Reasoning Settings" icon="brain">
+    Tune the reasoning effort level to balance depth of analysis against response speed.
+  </Card>
+  <Card title="Context Controls" icon="sliders">
+    Set how much project context Claude Code receives per turn — helpful for large codebases or token-sensitive workflows.
+  </Card>
+  <Card title="Stop Support" icon="stop">
+    Interrupt Claude Code mid-turn at any point. Pix sends the stop signal cleanly so you can redirect without waiting for a full response.
+  </Card>
+</CardGroup>
+
+<Note>
+  Pix only renders controls that Claude Code actually supports. If a capability isn't listed here, it isn't hidden — it simply doesn't apply to this agent.
+</Note>
+
+## Using Claude Code in a Session
+
+**Starting a session**
+Select Claude Code from the agent picker in your workspace and type your first message. Pix attaches the runtime only when you send — idle history browsing never wakes the agent or consumes resources.
+
+**Steering mid-turn**
+If Claude Code's response is heading in the wrong direction, use the **Stop** button to interrupt immediately. You can then refine your prompt and resend, or hand the task to a different agent while all context stays warm.
+
+**Stopping a session**
+Click **Stop** at any time to halt the current turn. The session history is preserved, so you can resume, fork, or hot-swap to another agent from exactly where you left off.
+
+## Tips for Getting the Most Out of Claude Code
+
+- **Attach files with `@`** — Type `@` in the input field to reference a specific file, directory, or symbol. Claude Code receives the content inline, giving it precise context without manual copy-pasting.
+- **Reference sessions with `#`** — Use `#` to pull in a previous session as context. This is especially useful when continuing multi-step work across different agent sessions.
+- **Pair reasoning settings with task complexity** — For architectural decisions or tricky bugs, raise the reasoning effort. For quick scaffolding or boilerplate, lower it to get faster responses.
+- **Hot-swap after exploration** — Use Claude Code's reasoning strengths to plan or debug, then hand the implementation task to Codex or another agent via the hot-swap control. Context carries over automatically.

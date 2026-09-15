@@ -1,0 +1,69 @@
+---
+title: "Using Pi with Pix"
+sidebarTitle: "Pi"
+description: "Connect Pi's conversational AI to Pix for research, prototyping, and scratch workspaces — then hand off to a coding agent instantly."
+---
+
+Pi is a conversational AI built for natural, open-ended dialogue — ideal for exploring ideas, talking through requirements, and prototyping before you write a single line of code. Pix integrates Pi into its unified workspace so you can use it as a thinking partner at any stage of your project, then hand the conversation directly to Claude Code, Codex, or Cursor when you're ready to build.
+
+## Connecting Pi to Pix
+
+1. Open **Settings** in the Pix sidebar.
+2. Select **Agents**, then click **Add Agent**.
+3. Choose **Pi** from the agent list.
+4. Authorize with your Pi credentials when prompted.
+5. Once connected, Pi appears in your agent selector and is available in any session alongside your coding agents.
+
+## Capabilities Pix Surfaces for Pi
+
+Pix exposes only the controls that Pi genuinely supports, keeping the interface uncluttered and accurate.
+
+<CardGroup cols={2}>
+  <Card title="Model Selection" icon="microchip">
+    Choose from available Pi model variants to match the conversational depth or response speed you need for a given session.
+  </Card>
+  <Card title="Context Controls" icon="sliders">
+    Adjust how much prior conversation Pi carries into each turn — useful for long research threads or focused scratch sessions.
+  </Card>
+  <Card title="Stop Support" icon="stop">
+    Interrupt Pi mid-response at any point. Pix sends the stop signal cleanly so you can redirect the conversation without waiting for a full reply.
+  </Card>
+</CardGroup>
+
+<Note>
+  Pix only renders controls that Pi actually supports. Capability-aware display ensures every setting you see has a real effect on this agent.
+</Note>
+
+## Using Pi Sessions in Pix
+
+**Research and exploration**
+Use Pi to investigate a topic, talk through architecture options, or stress-test assumptions before committing to an approach. Pi's conversational style makes it easy to iterate on ideas quickly in plain language.
+
+**Prototyping and sketching**
+Describe a feature or system in broad strokes and let Pi help you shape it into a concrete plan. Pi can generate pseudocode, draft specifications, or outline data models — giving you a solid foundation before you switch to a coding agent.
+
+**Scratch workspaces**
+Open a Pi session as a low-stakes scratch space for thinking out loud. Pix preserves the full session history, so nothing you explore gets lost even if you don't act on it immediately.
+
+**General agent conversations**
+Pi works equally well for non-technical questions that arise mid-project — licensing questions, documentation drafts, team communication, or anything else where you need a thoughtful conversational partner rather than a code generator.
+
+## Handing Pi Conversations to a Coding Agent
+
+When a Pi conversation reaches the point where you're ready to implement, use the hot-swap control to transfer the session to Claude Code, Codex, or Cursor. Pix carries the full conversation context forward — the incoming coding agent starts with everything Pi surfaced, so you don't need to re-explain your requirements or decisions.
+
+<Steps>
+  <Step title="Reach a clear handoff point">
+    Use Pi to fully define the task — requirements, constraints, and any relevant context.
+  </Step>
+  <Step title="Open the hot-swap control">
+    Click the agent picker in your active session and select the coding agent you want to hand off to.
+  </Step>
+  <Step title="Continue without rebuilding context">
+    The new agent inherits the Pi conversation history. Start coding immediately from where the conversation left off.
+  </Step>
+</Steps>
+
+<Info>
+  **OpenCode** and **Copilot** are coming soon to Pix. Once available, you'll be able to connect them through the same **Settings → Agents → Add Agent** flow and use them interchangeably with Pi, Claude Code, Codex, and Cursor — including full hot-swap and context handoff support.
+</Info>

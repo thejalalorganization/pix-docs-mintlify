@@ -1,72 +1,78 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Pixcode",
+  "theme": "luma",
+  "favicon": "https://media.brand.dev/37188036-cdc9-414b-bda4-2bcdc846530a.svg",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "primary": "#ffffff",
+    "light": "#c7c7c7",
+    "dark": "#747474"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Download Pix",
+      "href": "https://pixcode.sh"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/agents",
+              "concepts/sessions",
+              "concepts/projects"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "agents/claude-code",
+              "agents/codex",
+              "agents/cursor",
+              "agents/pi"
+            ]
+          },
+          {
+            "group": "Using Pix",
+            "pages": [
+              "guides/parallel-jobs",
+              "guides/handoffs",
+              "guides/forking",
+              "guides/context-and-files",
+              "guides/mcp-tools"
+            ]
+          },
+          {
+            "group": "Platforms",
+            "pages": [
+              "platforms/mac",
+              "platforms/iphone-ipad",
+              "platforms/web",
+              "platforms/linux"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts",
+              "reference/faq"
+            ]
+          }
+        ]
+      }
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }

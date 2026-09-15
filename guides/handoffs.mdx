@@ -1,0 +1,68 @@
+---
+title: "Hand Off Work Between Agents in Pix"
+sidebarTitle: "Handoffs"
+description: "Continue a session with a different agent while keeping the full conversation and project context intact — no copy-pasting, no lost history."
+---
+
+A handoff lets you continue an existing session under a different agent without losing any of the work that came before. The conversation history, project context, and in-progress state all transfer to the new agent, so you can move from scaffolding to implementation to review without starting over or juggling separate windows.
+
+## Hand Off to Another Agent
+
+<Steps>
+  <Step title="Complete or pause the current turn">
+    Wait for the active agent's turn to finish, or use **Stop** to pause it. Handoffs work best from a clean boundary — a completed turn gives the incoming agent a clear, consistent picture of where things stand.
+  </Step>
+  <Step title="Open the handoff control">
+    Select **Hand Off** from the session toolbar. A picker displays all available agents: Claude Code, Codex, Cursor, and Pi.
+  </Step>
+  <Step title="Select the incoming agent">
+    Choose the agent you want to continue with. Pix transfers the conversation history and project context — the new agent receives the full thread, not just a summary.
+  </Step>
+  <Step title="Continue with the new agent">
+    Send your next message. The incoming agent picks up the work in context, already aware of what the previous agent did, which files were changed, and what's still outstanding.
+  </Step>
+</Steps>
+
+<Note>
+  Context transfer includes the conversation transcript, referenced files, and any project metadata Pix has collected. However, agent capabilities differ — Claude Code and Codex can execute code and edit files, while Pi is conversational. If you hand off to an agent that doesn't support a capability the previous agent used (like terminal access or file writes), those actions won't be available in the new session leg.
+</Note>
+
+## Reference Another Session with #
+
+You can pull any session into the current conversation to give the agent additional context without performing a full handoff.
+
+Type **#** in the composer and a session picker appears. Select the session you want to reference. Pix pulls that session's history into the current context window, and the agent can read, compare, or build on it directly.
+
+Use `#` references to:
+- Point the current agent at a previous exploration ("implement this based on #[spike session]")
+- Compare two different approaches worked out in separate sessions
+- Hand the context of a side investigation into the main thread without merging the sessions
+
+## Example Workflow: Scaffold → Implement → Review
+
+A practical three-agent handoff for a new feature:
+
+**01 — Codex scaffolds the structure.**
+Ask Codex to generate the file layout, boilerplate, and interfaces for the new feature. Codex is fast at producing structural code from a clear spec.
+
+**02 — Claude Code implements the logic.**
+Hand off to Claude Code. It receives the scaffolded files and the conversation about the spec, then fills in the implementation — writing functions, handling edge cases, and running the test suite.
+
+**03 — Pi reviews and discusses.**
+Hand off to Pi. Pi reads the completed implementation and the full thread, then provides a conversational review: what looks solid, what's worth revisiting, and what questions to bring back to the team.
+
+Each agent adds to the same session. The final thread is a single coherent record of the entire workflow.
+
+## Compare Sessions Side by Side
+
+When you reference a session with `#`, you can open it in a split view to compare it directly with the current session. This is useful when:
+
+- Two parallel sessions explored different implementations and you're deciding which to ship
+- A previous session solved a similar problem and you want to adapt the approach
+- You want to verify that the current session's output matches an earlier design decision
+
+Select **Open Side by Side** after inserting a `#` reference, and both sessions appear in a split layout. You can scroll each independently and send messages to the active session while the reference session stays visible.
+
+<Tip>
+  Handoffs work best when each agent leg has a clear, focused scope. Use Codex for fast structural generation, Claude Code for careful implementation and reasoning, and Pi for discussion, planning, and review. The warm context transfer means you don't have to re-explain the project at each step — just tell the new agent what you need next.
+</Tip>

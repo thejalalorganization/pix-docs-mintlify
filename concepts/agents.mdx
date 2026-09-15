@@ -1,0 +1,68 @@
+---
+title: "Coding Agents in Pix: How Agent Support Works"
+sidebarTitle: "Agents"
+description: "Learn how Pix connects to coding AI runtimes, which agents are supported, and how capability-honest design keeps every action predictable."
+---
+
+Pix gives you a single workspace to run, switch between, and coordinate multiple coding AI runtimes — called agents. Instead of juggling separate tools, you work from one interface while Pix handles how each agent is connected, what controls are shown, and how context moves between them.
+
+## What Is an Agent?
+
+In Pix, an **agent** is a coding AI runtime that Pix connects to on your behalf. When you send a message, Pix attaches the selected agent, routes your input, and streams its response back into your session. Agents are **not** woken just to browse history — Pix loads past sessions instantly without touching the runtime, so you only consume tokens when you actually need the agent to act.
+
+## Capability-Honest Design
+
+Different agents support different features: some handle file attachments, some stream tool calls, some support multi-turn context, and some do not. Rather than showing you every possible control and silently failing when an agent can't fulfill it, Pix surfaces **only the controls a given agent genuinely supports**.
+
+This means every button, toggle, and action you see has a clear contract — if it's visible, it works.
+
+<Note>
+  When you switch agents, the available controls may change. This reflects real differences in what each runtime supports, not missing features in Pix.
+</Note>
+
+## Supported Agents
+
+<CardGroup cols={2}>
+  <Card title="Claude Code" icon="circle-c">
+    Anthropic's coding agent. Excels at multi-step reasoning, file editing, and running terminal commands inside your project.
+  </Card>
+  <Card title="Codex" icon="brackets-curly">
+    OpenAI's coding model. Strong at code generation, refactoring, and inline completions across a wide range of languages.
+  </Card>
+  <Card title="Cursor" icon="cursor-text">
+    AI-native code editor integration. Brings Cursor's deep IDE context into your Pix session for in-editor-style collaboration.
+  </Card>
+  <Card title="Pi" icon="pi">
+    Conversational AI from Inflection. Useful for planning, research, and open-ended discussions before writing code.
+  </Card>
+  <Card title="OpenCode" icon="code" color="#94a3b8">
+    **Coming soon.** Open-source coding agent integration.
+  </Card>
+  <Card title="Copilot" icon="github" color="#94a3b8">
+    **Coming soon.** GitHub Copilot integration for inline and chat-based assistance.
+  </Card>
+</CardGroup>
+
+## Switching Agents
+
+You can hand work to a different agent at any point without losing your place. When you switch:
+
+<Steps>
+  <Step title="Select a new agent">
+    Open the agent picker in the composer and choose the agent you want to continue with.
+  </Step>
+  <Step title="Context is preserved">
+    Your conversation history and project context remain in the session. The new agent picks up from where the previous one left off.
+  </Step>
+  <Step title="Controls update">
+    The toolbar updates to reflect what the newly selected agent supports. Any capabilities not available for that runtime are hidden automatically.
+  </Step>
+</Steps>
+
+<Tip>
+  Use agent switching for handoffs — for example, plan a feature with Pi, then pass execution to Claude Code without starting a new session.
+</Tip>
+
+## How Pix Attaches Runtimes
+
+Pix connects to an agent's runtime **only when you send a message**. Browsing session history, searching past tool calls, or reviewing file changes never wakes an agent. This keeps history exploration fast and your token usage predictable — the runtime is engaged exactly when you need it and idle the rest of the time.

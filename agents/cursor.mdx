@@ -1,0 +1,53 @@
+---
+title: "Using Cursor with Pix"
+sidebarTitle: "Cursor"
+description: "Integrate the Cursor AI code editor with Pix to manage sessions, fork history, and hand off work to other agents seamlessly."
+---
+
+Cursor is an AI-native code editor that brings inline completions, multi-file edits, and chat-driven development into a single environment. Pix integrates Cursor into its unified workspace, giving you session history, forking, and hot-swap handoffs — so Cursor becomes one node in your broader multi-agent workflow rather than a standalone tool.
+
+## Connecting Cursor to Pix
+
+1. Open **Settings** in the Pix sidebar.
+2. Select **Agents**, then click **Add Agent**.
+3. Choose **Cursor** from the agent list.
+4. Follow the authorization prompts to link your Cursor account.
+5. Once connected, Cursor appears in your agent selector and is ready to use alongside your other agents.
+
+## Capabilities Pix Surfaces for Cursor
+
+Pix surfaces the controls that map directly to Cursor's supported feature set, keeping the interface focused on what's actually available.
+
+<CardGroup cols={2}>
+  <Card title="Model Selection" icon="microchip">
+    Choose the underlying model Cursor uses for completions and chat — switch between options to match task complexity or speed requirements.
+  </Card>
+  <Card title="Context Controls" icon="sliders">
+    Adjust how much file and project context Cursor receives, ensuring relevant code is always in scope without overwhelming the context window.
+  </Card>
+  <Card title="Stop Support" icon="stop">
+    Interrupt an active Cursor turn at any point. Pix sends the stop signal cleanly, letting you redirect or hand off without waiting for a full response.
+  </Card>
+</CardGroup>
+
+<Note>
+  Pix only renders controls that Cursor actually supports. Capability-aware display means you'll never see a setting that has no effect on this agent.
+</Note>
+
+## Using Cursor Sessions in Pix
+
+**Browsing session history**
+All Cursor sessions are preserved in Pix's unified history view. Browse past turns, review diffs, and revisit decisions without waking the agent — Pix only attaches the runtime when you actively send a message.
+
+**Forking a session**
+Found a decision point where you want to explore two different directions? Fork the current Cursor session from the session menu. Each fork maintains its own independent history while sharing the original context baseline.
+
+**Handing off to another agent**
+When you're ready to move from editor-driven iteration to deeper reasoning or a different coding style, use the hot-swap control to transfer your Cursor session to Claude Code, Codex, or another connected agent. Context — including file state and conversation history — carries over automatically, so the incoming agent starts fully informed.
+
+## Tips for Combining Cursor with Other Agents
+
+- **Use Cursor for editor-native tasks** — Inline completions, quick refactors, and multi-file edits are where Cursor excels. Let it handle the close-in coding work, then hand off to Claude Code or Codex for architectural decisions or complex debugging.
+- **Fork before experimenting** — Before trying a risky refactor or a speculative feature, fork the session. If the experiment goes sideways, your original context is one click away.
+- **Chain agents by strength** — Start broad requirements in Pi, move to Cursor for initial implementation, then escalate to Claude Code for reasoning-heavy problem-solving. Each hot-swap preserves full context, so no agent starts cold.
+- **Keep context controls tight** — Cursor performs best when it has precise, relevant context. Use context controls to include the files most relevant to the current task rather than the entire project.
