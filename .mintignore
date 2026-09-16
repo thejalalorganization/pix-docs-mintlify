@@ -9,3 +9,4 @@ drafts/
 # Mintlify agent auto-generated draft, kept for comparison. Not published.
 legacy/**
 .atlas-analysis.json
+design/**

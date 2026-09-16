@@ -1,0 +1,62 @@
+{
+ "A-mint-amber": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#a8410b",
+   "light": "#f0a868",
+   "dark": "#8e370a"
+  }
+ },
+ "B-maple-amber": {
+  "theme": "maple",
+  "colors": {
+   "primary": "#a8410b",
+   "light": "#f0a868",
+   "dark": "#8e370a"
+  },
+  "background": {
+   "decoration": "gradient"
+  }
+ },
+ "C-maple-indigo": {
+  "theme": "maple",
+  "colors": {
+   "primary": "#4f46e5",
+   "light": "#a5b4fc",
+   "dark": "#4338ca"
+  },
+  "background": {
+   "decoration": "gradient"
+  },
+  "fonts": {
+   "family": "Inter"
+  }
+ },
+ "D-almond-terracotta": {
+  "theme": "almond",
+  "colors": {
+   "primary": "#c2410c",
+   "light": "#fdba74",
+   "dark": "#9a3412"
+  }
+ },
+ "E-linden-phosphor": {
+  "theme": "linden",
+  "colors": {
+   "primary": "#16a34a",
+   "light": "#4ade80",
+   "dark": "#15803d"
+  }
+ },
+ "F-palm-teal": {
+  "theme": "palm",
+  "colors": {
+   "primary": "#0f766e",
+   "light": "#5eead4",
+   "dark": "#115e59"
+  },
+  "background": {
+   "decoration": "grid"
+  }
+ }
+}

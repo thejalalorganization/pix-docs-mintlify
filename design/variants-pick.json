@@ -1,0 +1,83 @@
+{
+ "N-classic-black-beige": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#1c1c1a",
+   "light": "#e8e6e1",
+   "dark": "#000000"
+  },
+  "background": {
+   "color": {
+    "light": "#f3eee3",
+    "dark": "#111111"
+   }
+  },
+  "fonts": {
+   "family": "Inter"
+  }
+ },
+ "J-peacock-saffron": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#0f6e78",
+   "light": "#5fd3d8",
+   "dark": "#0b5259"
+  },
+  "background": {
+   "color": {
+    "light": "#f4f6f2",
+    "dark": "#0b1517"
+   }
+  }
+ },
+ "O-navy-cream-gold": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#1f2a5a",
+   "light": "#e2b859",
+   "dark": "#172046"
+  },
+  "background": {
+   "color": {
+    "light": "#faf6ee",
+    "dark": "#0d1020"
+   }
+  }
+ },
+ "A-mint-amber": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#a8410b",
+   "light": "#f0a868",
+   "dark": "#8e370a"
+  }
+ },
+ "H-haldi-indigo": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#b07a14",
+   "light": "#f2c14e",
+   "dark": "#8a5e0e"
+  },
+  "background": {
+   "color": {
+    "light": "#fbf7ee",
+    "dark": "#13162a"
+   }
+  }
+ },
+ "C-maple-indigo": {
+  "theme": "maple",
+  "colors": {
+   "primary": "#4f46e5",
+   "light": "#a5b4fc",
+   "dark": "#4338ca"
+  },
+  "background": {
+   "decoration": "gradient"
+  },
+  "fonts": {
+   "family": "Inter"
+  }
+ }
+}

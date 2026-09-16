@@ -1,0 +1,131 @@
+{
+ "G-sindoor-ivory": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#c43d1c",
+   "light": "#f58a6a",
+   "dark": "#9e2f14"
+  },
+  "background": {
+   "color": {
+    "light": "#f7f2e8",
+    "dark": "#1a1310"
+   }
+  }
+ },
+ "H-haldi-indigo": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#b07a14",
+   "light": "#f2c14e",
+   "dark": "#8a5e0e"
+  },
+  "background": {
+   "color": {
+    "light": "#fbf7ee",
+    "dark": "#13162a"
+   }
+  }
+ },
+ "I-nila-sandalwood": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#2f3c8f",
+   "light": "#9bb0ff",
+   "dark": "#243070"
+  },
+  "background": {
+   "color": {
+    "light": "#f7f3ea",
+    "dark": "#0e1120"
+   }
+  }
+ },
+ "J-peacock-saffron": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#0f6e78",
+   "light": "#5fd3d8",
+   "dark": "#0b5259"
+  },
+  "background": {
+   "color": {
+    "light": "#f4f6f2",
+    "dark": "#0b1517"
+   }
+  }
+ },
+ "K-kumkum-ivory": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#9b1b30",
+   "light": "#f28ba0",
+   "dark": "#761323"
+  },
+  "background": {
+   "color": {
+    "light": "#f8f3ec",
+    "dark": "#170e11"
+   }
+  }
+ },
+ "L-marigold-charcoal": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#d98a17",
+   "light": "#ffb84d",
+   "dark": "#a8680f"
+  },
+  "background": {
+   "color": {
+    "light": "#fffaf0",
+    "dark": "#141414"
+   }
+  }
+ },
+ "M-mehndi-rose": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#5c6a1f",
+   "light": "#b9c86a",
+   "dark": "#454f17"
+  },
+  "background": {
+   "color": {
+    "light": "#f8f6ef",
+    "dark": "#121408"
+   }
+  }
+ },
+ "N-classic-black-beige": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#1c1c1a",
+   "light": "#e8e6e1",
+   "dark": "#000000"
+  },
+  "background": {
+   "color": {
+    "light": "#f3eee3",
+    "dark": "#111111"
+   }
+  },
+  "fonts": {
+   "family": "Inter"
+  }
+ },
+ "O-navy-cream-gold": {
+  "theme": "mint",
+  "colors": {
+   "primary": "#1f2a5a",
+   "light": "#e2b859",
+   "dark": "#172046"
+  },
+  "background": {
+   "color": {
+    "light": "#faf6ee",
+    "dark": "#0d1020"
+   }
+  }
+ }
+}
