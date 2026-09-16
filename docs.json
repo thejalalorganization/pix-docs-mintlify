@@ -118,7 +118,7 @@
         },
         {
           "anchor": "GitHub",
-          "href": "https://github.com/thejalalorganization/pix-docs",
+          "href": "https://github.com/sakib/pix-docs",
           "icon": "github"
         }
       ]
@@ -128,7 +128,7 @@
     "links": [
       {
         "label": "GitHub",
-        "href": "https://github.com/thejalalorganization/pix-docs"
+        "href": "https://github.com/sakib/pix-docs"
       }
     ],
     "primary": {
@@ -149,7 +149,7 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/thejalalorganization"
+      "github": "https://github.com/sakib"
     }
   },
   "seo": {
