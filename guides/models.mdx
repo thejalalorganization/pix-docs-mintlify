@@ -1,0 +1,98 @@
+---
+title: "Models and thinking"
+description: "Per-agent model, thinking level, and speed mode controls, and how to set defaults."
+---
+
+Model controls in Pix are per-agent and reflect what the agent actually
+supports. Pix queries each agent for its capability set and caches the answer
+in `~/.pix/models.json`.
+
+## What a model entry describes
+
+Each model reports far more than a name:
+
+```json
+{
+  "id": "opus",
+  "label": "Opus 5",
+  "resolvedId": "claude-opus-5",
+  "thinkingLevels": ["low", "medium", "high", "xhigh", "max"],
+  "defaultThinkingLevel": "high",
+  "speedModes": [
+    {"id": "standard", "label": "Standard", "accelerated": false},
+    {"id": "fast", "label": "Fast", "description": "Faster responses with increased usage", "accelerated": true}
+  ],
+  "defaultSpeedMode": "standard"
+}
+```
+
+The distinction between `id` and `resolvedId` is worth understanding. `id` is
+the alias you select (`opus`, `sonnet`, `default`); `resolvedId` is the concrete
+model it currently maps to (`claude-opus-5`). Aliases move as new models ship.
+Sessions record what you selected, and `resolvedId` tells you what that actually
+meant at the time.
+
+## Thinking levels
+
+{/* screenshot: model-controls.png — Model controls for Claude: thinking level and, on Opus, speed mode. */}
+
+Where an agent supports them, Pix exposes the full range — `low`, `medium`,
+`high`, `xhigh`, `max` — with the agent's own default pre-selected.
+
+Higher levels mean more reasoning before acting: better on genuinely hard
+problems, slower and more expensive on easy ones. A rough guide:
+
+| Level | Good for |
+| --- | --- |
+| `low` | Mechanical edits, renames, formatting |
+| `medium` | Ordinary feature work |
+| `high` | Debugging, design decisions, unfamiliar code |
+| `xhigh` / `max` | Subtle bugs, architecture, anything you have already failed at once |
+
+Note that `high` is frequently the agent's *own* default rather than `medium` —
+these agents are tuned for real engineering work.
+
+## Speed modes
+
+Some models offer a speed mode. Where they do, the model entry says so
+explicitly, including the trade-off:
+
+> **Fast** — "Faster responses with increased usage"
+
+That is the honest framing: speed costs usage. Pix surfaces the description
+from the agent rather than inventing its own.
+
+Crucially, a fast mode is **not** a smaller model. On Claude Opus, fast mode is
+still Opus, with faster output.
+
+## Models that have no controls
+
+Haiku 4.5 reports `defaultThinkingLevel: null` and no speed modes. Pix shows
+no thinking selector for it. This is not a limitation being hidden; it is
+[capability
+honesty](/getting-started/connecting-agents#capability-honesty) — a control that
+appears is a control that works.
+
+## Setting defaults
+
+Per agent, and per project-and-agent, in `settings-profile.json`:
+
+```json
+{
+  "defaultsByAgent": {
+    "claude": {"modelId": "opus", "thinkingLevel": null, "speedMode": null}
+  },
+  "defaultsByProjectAgent": {}
+}
+```
+
+`null` means "use the agent's own default", which is usually the right choice —
+it tracks upstream changes instead of pinning you to a stale opinion.
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Handoffs" icon="right-left" href="/guides/handoffs">Change the agent, not just the model.</Card>
+  <Card title="Connecting agents" icon="play" href="/getting-started/connecting-agents">Capability honesty explained.</Card>
+  <Card title="Usage and context" icon="chart-simple" href="/guides/usage-and-context">What thinking levels cost.</Card>
+</CardGroup>

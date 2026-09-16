@@ -1,0 +1,78 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Pixcode",
+  "theme": "luma",
+  "favicon": "https://media.brand.dev/37188036-cdc9-414b-bda4-2bcdc846530a.svg",
+  "colors": {
+    "primary": "#ffffff",
+    "light": "#c7c7c7",
+    "dark": "#747474"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Download Pix",
+      "href": "https://pixcode.sh"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/agents",
+              "concepts/sessions",
+              "concepts/projects"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "agents/claude-code",
+              "agents/codex",
+              "agents/cursor",
+              "agents/pi"
+            ]
+          },
+          {
+            "group": "Using Pix",
+            "pages": [
+              "guides/parallel-jobs",
+              "guides/handoffs",
+              "guides/forking",
+              "guides/context-and-files",
+              "guides/mcp-tools"
+            ]
+          },
+          {
+            "group": "Platforms",
+            "pages": [
+              "platforms/mac",
+              "platforms/iphone-ipad",
+              "platforms/web",
+              "platforms/linux"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts",
+              "reference/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

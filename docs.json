@@ -1,78 +1,158 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Pixcode",
-  "theme": "luma",
-  "favicon": "https://media.brand.dev/37188036-cdc9-414b-bda4-2bcdc846530a.svg",
+  "theme": "mint",
+  "name": "Pix",
+  "description": "One place for every coding agent.",
   "colors": {
-    "primary": "#ffffff",
-    "light": "#c7c7c7",
-    "dark": "#747474"
+    "primary": "#a8410b",
+    "light": "#f0a868",
+    "dark": "#8e370a"
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Download Pix",
-      "href": "https://pixcode.sh"
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://pixcode.sh"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Oxanium",
+      "weight": 700
     }
+  },
+  "appearance": {
+    "default": "system"
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Docs",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Overview",
             "pages": [
-              "introduction",
-              "installation",
-              "quickstart"
+              "index"
             ]
           },
           {
-            "group": "Core Concepts",
+            "group": "Getting started",
             "pages": [
-              "concepts/agents",
-              "concepts/sessions",
-              "concepts/projects"
+              "getting-started/install",
+              "getting-started/first-session",
+              "getting-started/connecting-agents"
             ]
           },
           {
-            "group": "Agents",
+            "group": "Guides",
             "pages": [
-              "agents/claude-code",
-              "agents/codex",
-              "agents/cursor",
-              "agents/pi"
-            ]
-          },
-          {
-            "group": "Using Pix",
-            "pages": [
-              "guides/parallel-jobs",
+              "guides/sessions",
               "guides/handoffs",
-              "guides/forking",
-              "guides/context-and-files",
-              "guides/mcp-tools"
+              "guides/branching",
+              "guides/references",
+              "guides/search-and-catalog",
+              "guides/projects-and-scratch",
+              "guides/worktrees",
+              "guides/parallel-work",
+              "guides/models",
+              "guides/commands-and-skills",
+              "guides/surfaces",
+              "guides/remote-access",
+              "guides/usage-and-context"
             ]
           },
           {
-            "group": "Platforms",
+            "group": "Help",
             "pages": [
-              "platforms/mac",
-              "platforms/iphone-ipad",
-              "platforms/web",
-              "platforms/linux"
+              "troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Internals",
+        "groups": [
+          {
+            "group": "Under the hood",
+            "pages": [
+              "under-the-hood/architecture",
+              "under-the-hood/pix-directory",
+              "under-the-hood/session-log-format",
+              "under-the-hood/snapshots-and-projections",
+              "under-the-hood/blobs",
+              "under-the-hood/index-db",
+              "under-the-hood/native-history-import",
+              "under-the-hood/updates",
+              "under-the-hood/privacy"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Enterprise",
+        "groups": [
+          {
+            "group": "Enterprise",
+            "pages": [
+              "enterprise/editions",
+              "enterprise/shared-server",
+              "enterprise/identity-and-access",
+              "enterprise/audit-and-usage",
+              "enterprise/policy"
             ]
           },
           {
-            "group": "Reference",
+            "group": "Roadmap",
             "pages": [
-              "reference/keyboard-shortcuts",
-              "reference/faq"
+              "roadmap"
             ]
           }
         ]
       }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Download",
+          "href": "https://pixcode.sh",
+          "icon": "download"
+        },
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/thejalalorganization/pix-docs",
+          "icon": "github"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/thejalalorganization/pix-docs"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download",
+      "href": "https://pixcode.sh"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "mcp",
+      "cursor"
     ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/thejalalorganization"
+    }
+  },
+  "seo": {
+    "indexing": "all"
   }
 }
