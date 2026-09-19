@@ -4,9 +4,9 @@
   "name": "Pix",
   "description": "One place for every coding agent.",
   "colors": {
-    "primary": "#1c1c1a",
-    "light": "#e8e6e1",
-    "dark": "#000000"
+    "primary": "#a8410b",
+    "light": "#f0a868",
+    "dark": "#8e370a"
   },
   "favicon": "/favicon.svg",
   "logo": {
@@ -15,7 +15,10 @@
     "href": "https://pixcode.sh"
   },
   "fonts": {
-    "family": "Inter"
+    "heading": {
+      "family": "Oxanium",
+      "weight": 700
+    }
   },
   "appearance": {
     "default": "system"
@@ -152,15 +155,5 @@
   },
   "seo": {
     "indexing": "all"
-  },
-  "background": {
-    "color": {
-      "light": "#f3eee3",
-      "dark": "#111111"
-    }
-  },
-  "banner": {
-    "content": "Palette: N-classic-black-beige",
-    "dismissible": false
   }
 }
