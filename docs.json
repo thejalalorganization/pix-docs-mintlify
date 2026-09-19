@@ -31,7 +31,8 @@
           {
             "group": "Overview",
             "pages": [
-              "index"
+              "index",
+              "introduction"
             ]
           },
           {
