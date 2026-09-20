@@ -4,18 +4,21 @@
   "name": "Pix",
   "description": "One place for every coding agent.",
   "colors": {
-    "primary": "#1c1c1a",
-    "light": "#e8e6e1",
-    "dark": "#000000"
+    "primary": "#a8410b",
+    "light": "#f0a868",
+    "dark": "#8e370a"
   },
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg",
-    "href": "https://pixcode.sh"
+    "href": "/"
   },
   "fonts": {
-    "family": "Inter"
+    "heading": {
+      "family": "Oxanium",
+      "weight": 700
+    }
   },
   "appearance": {
     "default": "system"
@@ -25,13 +28,6 @@
       {
         "tab": "Docs",
         "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "index",
-              "introduction"
-            ]
-          },
           {
             "group": "Getting started",
             "pages": [
@@ -43,6 +39,7 @@
           {
             "group": "Guides",
             "pages": [
+              "introduction",
               "guides/sessions",
               "guides/handoffs",
               "guides/branching",
@@ -152,11 +149,5 @@
   },
   "seo": {
     "indexing": "all"
-  },
-  "background": {
-    "color": {
-      "light": "#f3eee3",
-      "dark": "#111111"
-    }
   }
 }
